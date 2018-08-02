@@ -116,7 +116,7 @@ class Activity
         return $this->latitude;
     }
     
-    public function getOpeningHours() : string
+    public function getOpeningHours() : array
     {
         return $this->openingHours;
     }

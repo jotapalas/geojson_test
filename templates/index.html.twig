@@ -8,13 +8,31 @@
     <h3>
         Main menu
     </h3>
-    <ul>
-        <li>
-            <a href="{{ path('load_activities') }}">Load activities</a>
-        </li>
-        <li>
-            <a href="{{ path('show_activities') }}">Show activities</a>
-        </li>
-    </ul>
+    <a href="{{ path('load_activities') }}">Load activities</a><br>
+    <hr>
+    <form action="{{ path('show_activities') }}" method="GET">
+        <input type="text" name="category" placeholder="category"><br>
+        <input type="text" name="location" placeholder="location"><br>
+        <input type="text" name="district" placeholder="district"><br>
+        <input type="submit" value="Show activities">
+    </form>
+    <hr>
+    <form action="{{ path('recommend_activity') }}" method="GET">
+        <input type="text" name="category" placeholder="category" required><br>
+        <select name="day" required>
+            <option value="" selected="selected">--Select a day--</option>
+            <option value="mo">Monday</option>
+            <option value="tu">Tuesday</option>
+            <option value="we">Wednesday</option>
+            <option value="th">Thursday</option>
+            <option value="fr">Friday</option>
+            <option value="sa">Saturday</option>
+            <option value="su">Monday</option>
+        </select><br>
+        <input type="time" name="start" value="00:00" required><br>
+        <input type="time" name="end" value="23:59" required><br>
+        <input type="submit" value="Recommend me an activity!">
+    </form>
+    <hr>
 {% endblock %}
 

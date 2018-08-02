@@ -37,7 +37,8 @@ class LoadAction extends Controller
                     $activity->district,
                     $activity->hours_spent,
                     $activity->latlng[1],
-                    $activity->latlng[0]
+                    $activity->latlng[0],
+                    (array) $activity->opening_hours
                 );
                 
                 $entityManager->persist($activityInstance);

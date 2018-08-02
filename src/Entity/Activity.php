@@ -52,6 +52,13 @@ class Activity
     private $latitude;
     
     /**
+     * @ORM\Column(type="array")
+     */
+    private $openingHours;
+
+    
+    
+    /**
      * Constructor for Activity entity
      */
     public function __construct (
@@ -61,7 +68,8 @@ class Activity
         string  $district,
         float   $hoursSpent,
         float   $longitude,
-        float   $latitude 
+        float   $latitude,
+        array   $openingHours
     ) {
         $this->name = $name;
         $this->category = $category;
@@ -70,6 +78,7 @@ class Activity
         $this->hoursSpent = $hoursSpent;
         $this->longitude = $longitude;
         $this->latitude = $latitude;
+        $this->openingHours = $openingHours;
     }
     
     public function getName() : string 
@@ -107,6 +116,16 @@ class Activity
         return $this->latitude;
     }
     
+    public function getOpeningHours() : string
+    {
+        return $this->openingHours;
+    }
+    
+    public function getOpeningHoursForDay(string $day) : string
+    {
+        return $this->openingHours[$day];
+    }
+    
     /**
      * Returns a GeoJSON object as array for the activity
      */
@@ -124,6 +143,7 @@ class Activity
                 'category' => $this->category,
                 'location' => $this->location,
                 'district' => $this->district,
+                'opening_hours' => $this->openingHours
             ]
         ];
     }

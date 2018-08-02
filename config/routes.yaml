@@ -1,0 +1,14 @@
+# This file is the entry point to configure your own HTTP routes.
+# Files in the routes/ subdirectory configure the routes for your dependencies.
+
+index:
+    path: /
+    controller: 'App\Controller\IndexAction::__invoke'
+    
+list_activities:
+    path: /activities/show
+    controller: 'App\Controller\Activities\ShowAction::__invoke'
+    
+load_activities:
+    path: /activities/load
+    controller: 'App\Controller\Activities\LoadAction::__invoke'

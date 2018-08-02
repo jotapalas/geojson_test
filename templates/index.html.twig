@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block body %}
+    <h3>
+        Main menu
+    </h3>
+    <ul>
+        <li>
+            <a href="{{ path('load_activities') }}">Load activities</a>
+        </li>
+        <li>
+            <a href="{{ path('show_activities') }}">Show activities</a>
+        </li>
+    </ul>
+{% endblock %}
+

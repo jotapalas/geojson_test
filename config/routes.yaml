@@ -5,10 +5,14 @@ index:
     path: /
     controller: 'App\Controller\IndexAction::__invoke'
     
-list_activities:
+show_activities:
     path: /activities/show
     controller: 'App\Controller\Activities\ShowAction::__invoke'
     
 load_activities:
     path: /activities/load
     controller: 'App\Controller\Activities\LoadAction::__invoke'
+
+recommend_activities:
+    path: /activities/recommend
+    controller: 'App\Controller\Activities\RecommendAction::__invoke'

@@ -4,11 +4,13 @@ Juan Antonio Palacios
 ## Introduction
 This is an app developed following the specifications provided by CARTO. The structure is very simple as I made it for test purposes. There is only **one entity** in the database for storing *Activities*, but actually the best thing to do would have been at least **three entities:** *Activities*, on a many-to-one relationship with *Districts*, on a many-to-one relationship with *Cities*. Ideally, I would set up some **enum entities** for *Categories* and *Locations*.
 
+The app is developed using **Symfony 4**, a PHP framework with a lot of useful libraries, such as ORM for entity management or Route for easy routing. Documentation: https://symfony.com/doc/current/index.html#gsc.tab=0
+
 ## App structure
 The app has a simple GUI that leads to three different endpoints: *Load activities, show activities* and *recommend activities.* Every one of this endpoints is developed in a different PHP class at **src/Controller/Activities**.
 
 ### Load activities
-This endpoint do as it says: it loads the activities given in the json file to the database. It's specifically designed for an initial *one-time* upload, so it won't load any activity if the database is not empty.
+This endpoint do as it says: it loads the activities given in the JSON file to the database. It's specifically designed for an initial *one-time* upload, so it won't load any activity if the database is not empty.
 
 ### Show activities
 Given some filters (category, location, district), this endpoint returns the activities matching all of them (it returns an **exact match** with *AND* filters), in GeoJSON format. If there is no filter, it returns all activities.
@@ -34,7 +36,7 @@ It returns the perfect activity for the time range given. It only supports one d
     }
 ```
 ## Installation guide
-There is no installation needed! I've uploaded the full app to **Heroku**, so you can check it out if you follow this link: https://whispering-falls-17664.herokuapp.com/
+There is no installation needed! I've uploaded the full app to **Heroku**, so you can check it out if you follow this link: https://whispering-falls-17664.herokuapp.com/. Also, the app is using **JawsDB** as MySQL database.
 
 ## Extensions
 We could extend the functionality of the app in several ways. Here are some thougts about it:

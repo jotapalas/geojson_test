@@ -29,7 +29,9 @@ It returns the perfect activity for the time range given. It only supports one d
         if ($diffDays = 0) { //same day
           $diff = (strtotime($b) - strtotime($a))/3600;
         } else if ($diffDays > 0) {
-          $diff = ((strtotime('23:59') - strtotime($a)) + ((strtotime($b) - strtotime('00:00')))/3600;
+          $diff = ( (strtotime('23:59') - strtotime($a)) / 3600 )
+                + ( ($diffDays - 1) * 24 )
+                + ( (strtotime($b) - strtotime('00:00')) / 3600 );
         } 
         ...
         return $diff;

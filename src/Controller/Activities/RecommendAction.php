@@ -45,10 +45,10 @@ class RecommendAction extends AbstractController
         ]);
         
         /** @var array $validActivities */
-        $validActivities = array_filter(
+        $validActivities = array_values(array_filter(
             $activities,
             [$this, 'isValidActivity']
-        );
+        ));
         
         /** @var array $recommendedActivity */
         $recommendedActivity = !empty($validActivities)

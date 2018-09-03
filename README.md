@@ -1,6 +1,3 @@
-# Back-end Developer - CARTO
-Juan Antonio Palacios
-
 ## Introduction
 This is an app developed following the specifications provided by CARTO. The structure is very simple as I made it for test purposes. There is only **one entity** in the database for storing *Activities*, but actually the best thing to do would have been at least **three entities:** *Activities*, on a many-to-one relationship with *Districts*, on a many-to-one relationship with *Cities*. Ideally, I would set up some **enum entities** for *Categories* and *Locations*.
 
